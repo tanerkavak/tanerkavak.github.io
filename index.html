@@ -1,8 +1,5 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="tr" lang="tr">
 <head>
-	<script language="Javascript" type="text/javascript" src="js/jquery-1.4.1.js"></script>
-	<script language="Javascript" type="text/javascript" src="js/jquery.lwtCountdown-1.0.js"></script>
-	<script language="Javascript" type="text/javascript" src="js/misc.js"></script>
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 	<link rel="Stylesheet" type="text/css" href="style/main.css" />
 	<link rel="Stylesheet" type="text/css" href="style/css.css" />
@@ -12,65 +9,9 @@
 </head>
 
 <body>
-<div class="bg-g1 size1 flex-w flex-col-c-sb p-l-15 p-r-15 p-t-55 p-b-35 respon1">
 	
-<div id="container"><center>
-		<h1> ÇOK YAKINDA</h1>
-		<h2 class="subtitle">Site yapım aşamasındadır. </h2>
-
-		<!-- Countdown dashboard start -->
-		<div id="countdown_dashboard">
-			<div class="dash weeks_dash">
-				<span class="dash_title s1-txt1">hafta</span>
-				<div class="digit"><?=$date['weeks'][0]?></div>
-				<div class="digit"><?=$date['weeks'][1]?></div>
-			</div>
-
-			<div class="dash days_dash">
-				<span class="dash_title s1-txt1">gün</span>
-				<div class="digit"><?=$date['days'][0]?></div>
-				<div class="digit"><?=$date['days'][1]?></div>
-			</div>
-
-			<div class="dash hours_dash">
-				<span class="dash_title s1-txt1">saat</span>
-				<div class="digit"><?=$date['hours'][0]?></div>
-				<div class="digit"><?=$date['hours'][1]?></div>
-			</div>
-
-			<div class="dash minutes_dash">
-				<span class="dash_title s1-txt1">dakika</span>
-				<div class="digit"><?=$date['mins'][0]?></div>
-				<div class="digit"><?=$date['mins'][1]?></div>
-			</div>
-
-			<div class="dash seconds_dash">
-				<span class="dash_title s1-txt1">saniye</span>
-				<div class="digit"><?=$date['secs'][0]?></div>
-				<div class="digit"><?=$date['secs'][1]?></div>
-			</div>
-
-	</div></div></center>
-		<!-- Countdown dashboard end -->
-
-			<span class="s1-txt3 txt-center">
-			@ 2021 Taner Kavak
-		</span>
-		<script language="javascript" type="text/javascript">
-			jQuery(document).ready(function() {
-				$('#countdown_dashboard').countDown({
-					targetDate: {
-						'day': 		1,
-						'month': 	1,
-						'year': 	2022,
-						'hour': 	23,
-						'min': 		59,
-						'sec': 		59
-					}
-				});
-			});
-		</script>
-	
-	</div>
+<center>
+	<h1> ÇOK YAKINDA</h1>
+	<h2 class="subtitle">Site yapım aşamasındadır. </h2>
 </body>
 </html>
