@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+    <product>
+        <id>1</id>
+        <name>Ürün 1</name>
+        <price>100</price>
+    </product>
+    <product>
+        <id>2</id>
+        <name>Ürün 2</name>
+        <price>150</price>
+    </product>
+    <product>
+        <id>3</id>
+        <name>Ürün 3</name>
+        <price>200</price>
+    </product>
+</products>
