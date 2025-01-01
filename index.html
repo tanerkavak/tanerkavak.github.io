@@ -883,6 +883,44 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Supabase Tracking Script -->
+  <script type="module">
+    // Supabase Configuration
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+    // Replace these with your actual Supabase details
+    const SUPABASE_URL = 'https://mxzqkbktxzsaiyqtwwzj.supabase.co';
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im14enFrYmt0eHpzYWl5cXR3d3pqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU3NTE1ODYsImV4cCI6MjA1MTMyNzU4Nn0.Bd-G-Juf2OiCea_bkmCr0djtPPKen1tyZL-jhUoubmE';
+
+    const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    // Collect Visitor Data
+    const pageUrl = window.location.href;
+    const userAgent = navigator.userAgent;
+
+    // Save Data to Supabase
+    async function trackPageView() {
+      const { data, error } = await supabase
+        .from('page_views')
+        .insert([
+          {
+            page_url: pageUrl,
+            timestamp: new Date().toISOString(),
+            user_agent: userAgent,
+          },
+        ]);
+
+      if (error) {
+        console.error('Error tracking page view:', error);
+      } else {
+        console.log('Page view tracked successfully:', data);
+      }
+    }
+
+    // Call the tracking function
+    trackPageView();
+  </script>
   
 </body>
 
