@@ -23,6 +23,52 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+    // Replace these with your Supabase project details
+    const SUPABASE_URL = 'https://mxzqkbktxzsaiyqtwwzj.supabase.co';
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im14enFrYmt0eHpzYWl5cXR3d3pqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU3NTE1ODYsImV4cCI6MjA1MTMyNzU4Nn0.Bd-G-Juf2OiCea_bkmCr0djtPPKen1tyZL-jhUoubmE';
+
+    const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    async function handleSubmit(event) {
+      event.preventDefault(); // Prevent form from submitting normally
+
+      // Collect form data
+      const fullname = document.getElementById('fullname').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      // Insert data into Supabase
+      const { data, error } = await supabase
+        .from('form_views') // Make sure the table name is correct
+        .insert([
+          {
+            fullname: fullname,
+            email: email,
+            message: message,
+            timestamp: new Date().toISOString(),
+          },
+        ]);
+
+      if (error) {
+        console.error('Error saving form data:', error);
+        alert('An error occurred while submitting the form. Please try again.');
+      } else {
+        console.log('Form data saved successfully:', data);
+        alert('Thank you for your message!');
+        document.getElementById('contact-form').reset();
+      }
+    }
+
+    // Attach the submit handler to the form
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('contact-form');
+      form.addEventListener('submit', handleSubmit);
+    });
+  </script>
 </head>
 
 <body>
@@ -839,22 +885,22 @@
       <article class="contact" data-page="contact">
 
         <header>
-          <h2 class="h2 article-title">Contact (Demo)</h2>
+          <h2 class="h2 article-title">Contact</h2>
         </header>
 
         <section class="contact-form">
 
           <h3 class="h3 form-title">Contact Form</h3>
 
-          <form action="#" class="form" data-form>
+          <form action="#" id="contact-form" class="form" data-form>
 
             <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+              <input type="text" id="fullname" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
 
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+              <input type="email" id="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
             </div>
 
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+            <textarea name="message" id="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
 
             <button class="form-btn" type="submit" disabled data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
