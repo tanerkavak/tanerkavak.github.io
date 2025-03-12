@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Çalışmalara devam",
+        "file": "content/post1.md",
+        "category": "Genel"
+    },
+    {
+        "title": "markdown blog",
+        "file": "content/post2.md",
+        "category": "Yazılım"
+    },
+    {
+        "title": "Versiyon Kontrol",
+        "file": "content/Versiyon İsimlendirme.md",
+        "category": "Genel"
+    },
+    {
+        "title": "Post deneme",
+        "file": "content/post3.md",
+        "category": "Teknoloji"
+    }
+]
