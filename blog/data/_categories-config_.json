@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "name": "Genel",
+        "description": "Genel konular hakkında yazılar."
+    },
+    {
+        "id": 2,
+        "name": "Teknoloji",
+        "description": "Teknoloji dünyasından haberler ve yazılar."
+    },
+    {
+        "id": 3,
+        "name": "Yazılım",
+        "description": "Yazılım geliştirme ile ilgili içerikler."
+    },
+    {
+        "id": 4,
+        "name": "Frontend",
+        "description": "Frontend teknolojileri hakkında yazılar.",
+        "parentId": 3
+    },
+    {
+        "id": 5,
+        "name": "Backend",
+        "description": "Backend teknolojileri hakkında yazılar.",
+        "parentId": 3
+    }
+]
