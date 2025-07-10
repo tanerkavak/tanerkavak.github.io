@@ -6,7 +6,7 @@ html, body {
 }
 
 .bg-image {
-    background-image: url('../image/bg.jpg'); /* Görsel yolunu kontrol et */
+    background-image: url('../image/bg.webp'); /* Görsel yolunu kontrol et */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
