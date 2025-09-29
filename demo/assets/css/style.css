@@ -191,4 +191,21 @@ footer {
   margin-top: 1rem;       /* üstten boşluk */
   text-align: center;
   color: #495057;          /* header ile uyumlu yazı rengi */
+
+}
+.nav-button.active {
+  background-color: rgba(33, 37, 41);
+  color: white;
+  transform: translateY(-2px);
+  pointer-events: none; /* opsiyonel: tıklanmaz yapar */
+}
+
+.nav-button.active:hover {
+  background-color: rgba(33, 37, 41);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.nav-button.active img {
+  filter: brightness(0) invert(1);
 }
