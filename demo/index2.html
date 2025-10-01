@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
       .settings-box {
-        margin-top: 6px; /* header ile arada biraz boşluk */
-        height: 56px;    /* navbar yüksekliğiyle aynı (bootstrap default 56px) */
+        height: 56px; /* navbar yüksekliği ile aynı */
+        margin-left: 8px; /* header ile arada boşluk */
       }
       .settings-box .dropdown-toggle {
         height: 40px;
@@ -22,37 +22,41 @@
   </head>
   <body>
     
-    <!-- Header -->
-    <header class="container mt-2 rounded-2 bg-body-tertiary">
-      <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-          <!-- Sol taraf -->
-          <div class="d-flex justify-content-start align-items-center">
-            <a class="navbar-brand me-3" href="#"><b><sup>T</sup>/<sub>K</sub></b></a>
-            <button type="button" class="nav-button px-3 py-2 rounded me-2" disabled>Linkler</button>
+    <!-- Header + Settings yan yana -->
+    <div class="container mt-2 d-flex align-items-start">
+      
+      <!-- Header -->
+      <header class="flex-grow-1 rounded-2 bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid d-flex justify-content-between align-items-center">
+            <!-- Sol taraf -->
+            <div class="d-flex justify-content-start align-items-center">
+              <a class="navbar-brand me-3" href="#"><b><sup>T</sup>/<sub>K</sub></b></a>
+              <button type="button" class="nav-button px-3 py-2 rounded me-2" disabled>Linkler</button>
+            </div>
+            <!-- Menü -->
+            <div class="desktop-buttons d-none d-lg-flex justify-content-end align-items-center">
+              <button type="button" class="nav-button px-3 py-2 rounded me-2">Blog</button>
+              <button type="button" class="nav-button px-3 py-2 rounded me-2 active">İletişim</button>
+            </div>
           </div>
-          <!-- Menü -->
-          <div class="desktop-buttons d-none d-lg-flex justify-content-end align-items-center">
-            <button type="button" class="nav-button px-3 py-2 rounded me-2">Blog</button>
-            <button type="button" class="nav-button px-3 py-2 rounded me-2 active">İletişim</button>
-          </div>
+        </nav>
+      </header>
+      
+      <!-- AYARLAR BOX (YANINDA) -->
+      <div class="settings-box rounded-2 bg-body-tertiary d-flex align-items-center justify-content-center px-2">
+        <div class="dropdown">
+          <button class="nav-button dropdown-toggle" type="button" id="settingsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            ⚙️
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingsDropdown">
+            <li><button class="dropdown-item" id="toggleTheme">🌙 Karanlık / ☀️ Aydınlık</button></li>
+            <li><button class="dropdown-item" id="toggleLang">🇹🇷 Türkçe / 🇬🇧 English</button></li>
+          </ul>
         </div>
-      </nav>
-    </header>
-
-    <!-- AYARLAR BOX (HEADER’DAN DIŞARIDA, AYRI) -->
-    <div class="container settings-box rounded-2 bg-body-tertiary d-flex justify-content-end align-items-center">
-      <div class="dropdown">
-        <button class="nav-button dropdown-toggle" type="button" id="settingsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-          ⚙️
-        </button>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingsDropdown">
-          <li><button class="dropdown-item" id="toggleTheme">🌙 Karanlık / ☀️ Aydınlık</button></li>
-          <li><button class="dropdown-item" id="toggleLang">🇹🇷 Türkçe / 🇬🇧 English</button></li>
-        </ul>
       </div>
     </div>
-    
+
     <!-- Main -->
     <main class="container mt-4">
       <p> main kısmı </p>
