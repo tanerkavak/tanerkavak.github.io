@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Sayfa Bulunamadı</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icons/web.svg" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="container mt-2 rounded-2 bg-body-tertiary">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+          <div class="d-flex justify-content-start align-items-center">
+            <a class="navbar-brand me-3" href="#"><b><sup>T</sup>/<sub>K</sub></b></a>
+            <button type="button" class="nav-button px-3 py-2 rounded me-2" onclick="location.href='/'">Ana Sayfa</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- 404 Section -->
+    <section class="d-flex align-items-center min-vh-100 py-5 bg-light">
+      <div class="container py-5">
+        <div class="row align-items-center">
+          <!-- Lottie Animasyon -->
+          <div class="col-md-6 order-md-2 text-center mb-4 mb-md-0">
+            <lottie-player
+              src="https://assets9.lottiefiles.com/packages/lf20_kcsr6fcp.json"
+              background="transparent"
+              speed="1"
+              loop
+              autoplay
+              style="max-width: 100%; height: 300px;"
+            ></lottie-player>
+          </div>
+
+          <!-- Metin Bölümü -->
+          <div class="col-md-6 text-center text-md-start">
+            <h1 class="display-4 fw-bold text-secondary">404</h1>
+            <p class="fs-5 fw-light text-muted">Aradığınız sayfa taşınmış, silinmiş veya hiç var olmamış olabilir.</p>
+            <a class="btn nav-button px-4 py-2 mt-3" href="/">Ana Sayfaya Dön</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="container mt-2 mb-2 rounded-2 bg-body-tertiary text-center py-2">
+      © 2025 Taner Web. Tüm hakları saklıdır.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js" defer></script>
+  </body>
+</html>
