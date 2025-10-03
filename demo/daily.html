@@ -10,31 +10,32 @@
     <link rel="stylesheet" href="assets/css/style.css">
   <style>
 main {
-font-family: 'Courier New', Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 20px; /* Header'dan sonra boşluk */
 }
 
-    /* Alt yazıların (attribution) görünmesini tamamen kaldırmak için */
-    .leaflet-control-attribution {
-      display: none !important;
-    }
-    .divs {
-      display: flex;
-      background: #fff;
-      background-image:
-        linear-gradient(to right, rgba(0,0,0,0.08) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0,0,0,0.08) 1px, transparent 1px);
-      background-size: 20px 20px;
+.divs {
+  display: flex;
+  background: #fff;
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
 
-      line-height: 20px;
-      font-size: 16px;
-      padding: 8px;
-      overflow-wrap: break-word;
-      white-space: pre-wrap;
-      border: 1px solid #ccc;
-      margin-bottom: 20px;
+  line-height: 20px;
+  font-size: 16px;
+  padding: 8px;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
 
-      flex-direction: row; /* Masaüstü yan yana */
-    }
+  flex-direction: row; /* Masaüstü yan yana */
+
+  border-radius: 12px; /* Köşeleri yumuşatma */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+}
+
 
     /* Mobilde üst-alt dizilim ve 380x380 harita */
 #map {
@@ -237,6 +238,7 @@ window.addEventListener('resize', function() {
   </script>
   </body>
 </html>
+
 
 
 
