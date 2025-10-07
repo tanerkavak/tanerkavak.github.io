@@ -1,0 +1,95 @@
+[
+  {
+    "title": "Deneme 1",
+    "date": "2025-02-12",
+    "author": "Author",
+    "categories": ["Category A", "Category B"],
+    "tags": ["Tag A", "Tag B", "Tag C"],
+    "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    "coordinates": [
+      [39.925533, 32.866287],
+      [39.927000, 32.870000],
+      [39.930000, 32.875000],
+      [39.933363, 32.859742],
+      [39.933733, 32.856673]
+    ]
+  },
+  {
+    "title": "Deneme 2",
+    "date": "2026-03-03",
+    "author": "Tanner",
+    "categories": ["Hiking"],
+    "tags": ["Tag X"],
+    "content": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...",
+    "coordinates": [
+      [39.930000, 32.860000],
+      [39.935000, 32.865000],
+      [39.940000, 32.870000]
+    ]
+  },
+    {
+    "title": "Deneme 5",
+    "date": "2026-03-05",
+    "author": "Tanner",
+    "categories": ["Hiking"],
+    "tags": ["Tag X"],
+    "content": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...",
+    "coordinates": [
+      [39.930000, 32.860000],
+      [39.935000, 32.865000],
+      [39.940000, 32.870000]
+    ]
+  },
+  {
+    "title": "Deneme 3",
+    "date": "2025-05-15",
+    "author": "Author 3",
+    "categories": ["Category C"],
+    "tags": ["Tag D", "Tag E"],
+    "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.<",
+    "coordinates": [
+      [39.920000, 32.850000],
+      [39.922000, 32.855000],
+      [39.925000, 32.860000]
+    ]
+  },
+  {
+    "title": "Deneme 4",
+    "date": "2025-07-01",
+    "author": "Author 4",
+    "categories": ["Category D", "Category E"],
+    "tags": ["Tag F"],
+    "content": "Lorem Ipsum sample content for entry 4...",
+    "coordinates": [
+      [39.940000, 32.880000],
+      [39.945000, 32.885000],
+      [39.950000, 32.890000]
+    ]
+  },
+  {
+    "title": "Deneme 5",
+    "date": "2025-09-20",
+    "author": "Author 5",
+    "categories": ["Category F"],
+    "tags": ["Tag G", "Tag H"],
+    "content": "Lorem Ipsum sample content for entry 5...",
+    "coordinates": [
+      [39.910000, 32.840000],
+      [39.915000, 32.845000],
+      [39.920000, 32.850000]
+    ]
+  },
+  {
+    "title": "Deneme 6",
+    "date": "2026-01-10",
+    "author": "Author 6",
+    "categories": ["Category G"],
+    "tags": ["Tag I"],
+    "content": "Lorem Ipsum sample content for entry 6...",
+    "coordinates": [
+      [39.930000, 32.870000],
+      [39.935000, 32.875000],
+      [39.940000, 32.880000]
+    ]
+  }
+]
