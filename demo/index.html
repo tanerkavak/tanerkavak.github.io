@@ -19,14 +19,28 @@
 @media (min-width: 992px) {
   #page-footer {
     position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 1030;
+  }
 }
 
-/* Mobilde sabitlik kaldır */
+/* Küçük ekranlarda sabitliği kaldır */
 @media (max-width: 991.98px) {
   #page-footer {
     position: static;
   }
 }
+
+/* Footer görünümünü transparan yap (arka plan ve gölgeyi kaldır) */
+#page-footer {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+
 
 .profile-box {padding: 2rem; border-radius: var(--radius);}
 .centered-main {display: flex; flex-direction: column; justify-content: center; min-height: calc(100vh - 160px);}
@@ -122,11 +136,10 @@
 
 
 <!-- Footer -->
-<footer id="page-footer" class="mt-2 mb-2">
-  <div class="container rounded-2 bg-body-tertiary text-center py-3 shadow">
-    © 2025 tanerkavak.me Tüm hakları saklıdır.
-  </div>
+<footer class="container mt-2 mb-2 rounded-2 bg-body-tertiary" id="page-footer">
+  © 2025 tanerkavak.me Tüm hakları saklıdır.
 </footer>
+
 
 
 
@@ -150,6 +163,7 @@
 
   </body>
 </html>
+
 
 
 
