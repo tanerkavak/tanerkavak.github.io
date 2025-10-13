@@ -112,7 +112,7 @@
         <div class="profile-box text-center bg-body-tertiary mx-auto" style="max-width: 750px; padding: 1.5rem;">
            <h5 style="margin-bottom: -5px;"><span style="font-size: 16px;">Merhaba Ben,</span></h5>
             <h1><b>Taner Kavak</b></h1>
-            <h5 class="text-muted mb-3"><span style="font-size: 16px;">Meslek typed js</span></h5>
+            <h5 class="text-muted mb-3"><span style="font-size: 16px;" id="typed"></span></h5>
             <p>Türkiye’de İstanbul şehrinde ikamet etmekteyim. CBS Teknikeri, Coğrafyacıyım. Aynı zamanda Web Tasarım öğrencisiyim.</p>
             <p>Oyun geliştirme konusunda ilgilenmekteyim. Alanımda ve yeni alanlarda gelişmeyi ve yeni projeler oluşturmayı hedeflemekteyim.</p>
             <p>CBS alanında veri toplamak, güncellemek, tematik haritalar oluşturmak ve gerekli analizleri yapmaktır. Coğrafi verileri derleyerek ve gerekli analizleri yaparak haritalar hizmetlerine kullanışlı ve estetik bir görünüm kazandıracaktır.</p>
@@ -123,6 +123,7 @@
   © 2025 tanerkavak.me Tüm hakları saklıdır.
 </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="assets/js/script.js" defer></script>
     <script>
   (function() {
@@ -134,5 +135,25 @@
     }
   })();
 </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+    const typedStrings = [
+        'CBS Teknikeri',
+        'Coğrafyacı',
+        'Web Tasarım (Öğrenci)',
+        'Oyun Geliştirici (Amatör)'
+    ];
+
+    new Typed('#typed', {
+        strings: typedStrings,
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 1500,
+        loop: true
+    });
+});
+
+    </script>
 </body>
 </html>
+
