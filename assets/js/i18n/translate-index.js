@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             Btn003: 'Veri Merkezi',
             Btn004: 'Blog',
             Btn005: 'İletişim',
+            Btn201: 'Demo',
             Name: 'Taner Kavak',
             About001: 'Türkiyede İstanbul şehrinde ikamet etmekteyim. CBS Teknikeri, Coğrafyacıyım. Aynı zamanda Web Tasarım öğrencisiyim.',
             About002: 'Oyun geliştirme konusunda ilgilenmekteyim. Alanımda ve yeni alanlarda gelişmeyi ve yeni projeler oluşturmayı hedeflemekteyim.',
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             Btn003: 'Data Center',
             Btn004: 'Blog',
             Btn005: 'Contact',
+            Btn201: 'Demo',
             Name: 'Taner Kavak',
             About001: 'I reside in Istanbul, Turkey. I am a GIS Technician and a Geographer. I am also a Web Design student.',
             About002: 'I am interested in game development. I aim to improve myself in my field and in new areas, and to create new projects.',
@@ -71,4 +73,5 @@ document.addEventListener('DOMContentLoaded', () => {
         // Butonu ayrıca elle güncelle
         langBtn.innerHTML = translations[currentLang].translate;
     }
+
 });
