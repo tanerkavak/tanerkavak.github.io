@@ -74,14 +74,21 @@
         flex-direction: column;
         align-items: center;
       }
-
+/* orjinal kareli kutu css 
       .kareli-kutu {
         width: 380px !important;
         height: 380px !important;
         margin: 12px auto !important;
         display: block;
-      }
-
+      }*/
+  .kareli-kutu {
+    width: 100% !important;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; /* Kare kalmasını sağlar */
+    margin: 12px auto !important;
+    display: block;
+  }
       .icerik {
         width: 100%;
         display: flex;
@@ -383,5 +390,6 @@ window.addEventListener("resize", () => {
   </script>
 </body>
 </html>
+
 
 
