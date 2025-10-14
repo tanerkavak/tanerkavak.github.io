@@ -111,31 +111,40 @@
     <main class="container mt-2 mt-lg-3 my-2 my-lg-5 pb-2 pb-lg-5 centered-main bg-transparent">
 <div class="profile-box text-center bg-body-tertiary mx-auto" style="max-width: 750px; padding: 1.5rem;">
   <!-- İletişim Formu Başlangıcı -->
-  <h3>İletişime Geç</h3>
+<div class="profile-box bg-body-tertiary mx-auto" style="max-width: 750px; padding: 1.5rem;">
+  <h3 class="text-center mb-4">İletişime Geç</h3>
   <form action="#" method="POST">
-    <div class="mb-3">
-      <label for="ad" class="form-label">Ad</label>
-      <input type="text" class="form-control" id="ad" name="ad" required>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="ad" class="form-label">Ad</label>
+        <input type="text" class="form-control" id="ad" name="ad" required>
+      </div>
+      <div class="col-md-6">
+        <label for="soyad" class="form-label">Soyad</label>
+        <input type="text" class="form-control" id="soyad" name="soyad" required>
+      </div>
     </div>
-    <div class="mb-3">
-      <label for="soyad" class="form-label">Soyad</label>
-      <input type="text" class="form-control" id="soyad" name="soyad" required>
+    
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="konu" class="form-label">Konu</label>
+        <input type="text" class="form-control" id="konu" name="konu" required>
+      </div>
+      <div class="col-md-6">
+        <label for="email" class="form-label">E-posta</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
     </div>
-    <div class="mb-3">
-      <label for="konu" class="form-label">Konu</label>
-      <input type="text" class="form-control" id="konu" name="konu" required>
-    </div>
-    <div class="mb-3">
-      <label for="email" class="form-label">E-posta</label>
-      <input type="email" class="form-control" id="email" name="email" required>
-    </div>
+
     <div class="mb-3">
       <label for="mesaj" class="form-label">Mesaj</label>
       <textarea class="form-control" id="mesaj" name="mesaj" rows="4" required></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Gönder</button>
+
+    <div class="text-end">
+      <button type="submit" class="btn btn-primary">Gönder</button>
+    </div>
   </form>
-  <!-- İletişim Formu Bitişi -->
 </div>
 
     </main>
@@ -155,3 +164,4 @@
 </script>
 </body>
 </html>
+
