@@ -34,6 +34,20 @@
 }
 .profile-box {padding: 2rem; border-radius: var(--radius);}
 .centered-main {display: flex; flex-direction: column; justify-content: center; min-height: calc(100vh - 160px);}
+  .btn-custom {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.375rem;
+}
+
+.btn-custom:hover {
+  background-color: black;
+  color: white;
+}
+
 </style>
   </head>
   <body>
@@ -109,42 +123,33 @@
     </header>
 <!-- Main-->
 <main class="container mt-2 mt-lg-3 my-2 my-lg-5 pb-2 pb-lg-5 centered-main bg-transparent">
-  <div class="profile-box text-center bg-body-tertiary mx-auto" style="max-width: 750px; padding: 1.5rem;">
+  <form action="#" method="POST"
+        class="profile-box bg-body-tertiary mx-auto text-start"
+        style="max-width: 750px; padding: 1.5rem;">
+
     <h3 class="text-center mb-4">İletişime Geç</h3>
-    <form action="#" method="POST">
-      <div class="row mb-3 text-start">
-        <div class="col-md-6">
-          <label for="ad" class="form-label">Ad</label>
-          <input type="text" class="form-control" id="ad" name="ad" required>
-        </div>
-        <div class="col-md-6">
-          <label for="soyad" class="form-label">Soyad</label>
-          <input type="text" class="form-control" id="soyad" name="soyad" required>
-        </div>
-      </div>
-      
-      <div class="row mb-3 text-start">
-        <div class="col-md-6">
-          <label for="konu" class="form-label">Konu</label>
-          <input type="text" class="form-control" id="konu" name="konu" required>
-        </div>
-        <div class="col-md-6">
-          <label for="email" class="form-label">E-posta</label>
-          <input type="email" class="form-control" id="email" name="email" required>
-        </div>
-      </div>
 
-      <div class="mb-3 text-start">
-        <label for="mesaj" class="form-label">Mesaj</label>
-        <textarea class="form-control" id="mesaj" name="mesaj" rows="4" required></textarea>
-      </div>
+    <label for="ad" class="form-label">Ad</label>
+    <input type="text" class="form-control mb-3" id="ad" name="ad" required>
 
-      <div class="text-end">
-        <button type="submit" class="btn btn-primary">Gönder</button>
-      </div>
-    </form>
-  </div>
+    <label for="soyad" class="form-label">Soyad</label>
+    <input type="text" class="form-control mb-3" id="soyad" name="soyad" required>
+
+    <label for="konu" class="form-label">Konu</label>
+    <input type="text" class="form-control mb-3" id="konu" name="konu" required>
+
+    <label for="email" class="form-label">E-posta</label>
+    <input type="email" class="form-control mb-3" id="email" name="email" required>
+
+    <label for="mesaj" class="form-label">Mesaj</label>
+    <textarea class="form-control mb-4" id="mesaj" name="mesaj" rows="4" required></textarea>
+
+    <div class="text-end">
+      <button type="submit" class="btn btn-custom">Gönder</button>
+    </div>
+  </form>
 </main>
+
 
 <!-- Footer -->
 <footer class="container mt-2 mb-2 rounded-2 bg-body-tertiary" id="page-footer">
@@ -162,6 +167,7 @@
 </script>
 </body>
 </html>
+
 
 
 
