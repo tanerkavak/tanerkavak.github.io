@@ -9,10 +9,11 @@
   <style>
     main {
       flex: 1;
+      background-color: transparent !important;
     }
     /* Form kartı */
     .contact-card {
-      /*background-color: #e9ecef;*/
+      background-color: #e9ecef;
       border-radius: 0.5rem;
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
       width: 100%;
@@ -45,7 +46,7 @@
     /* Yan panel */
     .sidebar {
       flex: 1;
-     /* background-color: #e9ecef;*/
+     background-color: #e9ecef;
       padding: 1rem;
       border-right: 2px solid #dee2e6;
       margin-top: 0.5rem;
@@ -192,7 +193,8 @@
     </header>
 
   <!-- FORM -->
-  <main class="container mt-5 mt-lg-7 my-2 my-lg-5 pb-2 pb-lg-5 centered-main row justify-content-center bg-body-tertiary">
+  <main class="container mt-5 mt-lg-7 my-2 my-lg-5 pb-2 pb-lg-5 centered-main ">
+    <section class="row justify-content-center bg-body-tertiary">
       <div class="col-lg-12">
         <div class="contact-card">
           <div class="form-header">İletişim Formu</div>
@@ -240,6 +242,7 @@
           </div>
         </div>
       </div>
+        </section>
   </main>
 
 <!-- Footer -->
@@ -272,6 +275,7 @@
   </script>
 </body>
 </html>
+
 
 
 
