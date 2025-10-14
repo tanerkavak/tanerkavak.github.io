@@ -129,24 +129,26 @@
 
     <h3 class="text-center mb-4">İletişime Geç</h3>
 
+    <!-- Ad Soyad yan yana -->
     <label for="ad" class="form-label">Ad</label>
-    <input type="text" class="form-control mb-3" id="ad" name="ad" required>
-
+    <input type="text" class="form-control mb-3" id="ad" name="ad" required style="max-width: 48%; display: inline-block; margin-right: 4%;">
+    
     <label for="soyad" class="form-label">Soyad</label>
-    <input type="text" class="form-control mb-3" id="soyad" name="soyad" required>
+    <input type="text" class="form-control mb-3" id="soyad" name="soyad" required style="max-width: 48%; display: inline-block;">
 
+    <!-- Konu Email yan yana -->
     <label for="konu" class="form-label">Konu</label>
-    <input type="text" class="form-control mb-3" id="konu" name="konu" required>
+    <input type="text" class="form-control mb-3" id="konu" name="konu" required style="max-width: 48%; display: inline-block; margin-right: 4%;">
 
     <label for="email" class="form-label">E-posta</label>
-    <input type="email" class="form-control mb-3" id="email" name="email" required>
+    <input type="email" class="form-control mb-3" id="email" name="email" required style="max-width: 48%; display: inline-block;">
 
+    <!-- Mesaj full width -->
     <label for="mesaj" class="form-label">Mesaj</label>
     <textarea class="form-control mb-4" id="mesaj" name="mesaj" rows="4" required></textarea>
 
-    <div class="text-end">
-      <button type="submit" class="btn btn-custom">Gönder</button>
-    </div>
+    <!-- Buton yan yana, div olmadan, text-end etkisi inline-block ile -->
+    <button type="submit" class="btn btn-custom" style="float: right;">Gönder</button>
   </form>
 </main>
 
@@ -167,6 +169,7 @@
 </script>
 </body>
 </html>
+
 
 
 
