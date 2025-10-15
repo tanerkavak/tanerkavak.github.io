@@ -123,13 +123,23 @@ main {
     z-index: 1030;
   }
 }
+    @media (min-height: 770px){
+  #page-footer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 1030;
+  }
+}
 /* Küçük ekranlarda sabitliği kaldır */
 @media (max-width: 991.98px) {
   #page-footer {
     position: static;
   }
 }
-    @media (max-height: 770px) {
+    @media (max-height: 769.98px) {
   #page-footer {
     position: static;
   }
@@ -293,6 +303,7 @@ main {
 
 </body>
 </html>
+
 
 
 
