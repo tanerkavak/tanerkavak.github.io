@@ -113,7 +113,7 @@ main {
     }
 
           /* Geniş ekranlarda sabit footer */
-@media (min-width: 992px),(max-height: 770px) {
+@media (min-width: 992px){
   #page-footer {
     position: fixed;
     bottom: 0;
@@ -129,7 +129,11 @@ main {
     position: static;
   }
 }
-    
+    @media (max-height: 770px) {
+  #page-footer {
+    position: static;
+  }
+}
   </style>
 </head>
 <body>
@@ -289,5 +293,6 @@ main {
 
 </body>
 </html>
+
 
 
