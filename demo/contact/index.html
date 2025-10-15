@@ -134,16 +134,14 @@ main {
   }
 }
 /* Küçük ekranlarda sabitliği kaldır */
-@media (max-width: 991.98px) {
+@media (max-width: 991.98px), (max-height: 769.98px) {
   #page-footer {
     position: static;
+        left: auto;
+    transform: none;    
   }
 }
-    @media (max-height: 769.98px) {
-  #page-footer {
-    position: static;
-  }
-}
+
   </style>
 </head>
 <body>
@@ -303,6 +301,7 @@ main {
 
 </body>
 </html>
+
 
 
 
