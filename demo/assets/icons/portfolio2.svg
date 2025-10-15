@@ -2,7 +2,7 @@
 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
 <svg fill="#000000" height="32px" width="32px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
 	 viewBox="0 0 256 256" xml:space="preserve">
-<g>
+<g transform="scale(0.5) translate(128,128)">
 	<g>
 		<g>
 			<path d="M320,213.333c-23.531,0-42.667,19.136-42.667,42.667h85.333C362.667,232.469,343.531,213.333,320,213.333z"/>
@@ -26,3 +26,4 @@
 </g>
 
 </svg>
+
