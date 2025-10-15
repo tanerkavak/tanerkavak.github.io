@@ -111,26 +111,9 @@ main {
         border-radius: 0 0 0.5rem 0.5rem;
       }
     }
-          /* Geniş ekranlarda sabit footer */
-@media (min-width: 992px) {
-  #page-footer {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    z-index: 1030;
-  }
-}
-/* Küçük ekranlarda sabitliği kaldır */
-@media (max-width: 991.98px) {
-  #page-footer {
-    position: static;
-  }
-    main {
-    margin-bottom: 80px; /* footer yüksekliği kadar */
-  }
-}
+
+
+    
   </style>
 </head>
 <body>
@@ -260,7 +243,7 @@ main {
 </main>
 
 <!-- Footer -->
-<footer class="container mt-2 mb-2 rounded-2 bg-body-tertiary" id="page-footer">
+<footer class="container mt-2 mb-2 rounded-2 bg-body-tertiary" >
   © 2025 tanerkavak.me Tüm hakları saklıdır.
 </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -287,8 +270,35 @@ main {
       }, 2000);
     });
   </script>
+  <script>
+  function updateFooterPosition() {
+    const footer = document.getElementById("page-footer");
+    const docHeight = document.body.scrollHeight;
+    const winHeight = window.innerHeight;
+
+    // Sayfa ekrana sığıyorsa sabitle
+    if (docHeight <= winHeight) {
+      footer.style.position = "fixed";
+      footer.style.bottom = "0";
+      footer.style.left = "50%";
+      footer.style.transform = "translateX(-50%)";
+      footer.style.width = "100%";
+      footer.style.zIndex = "1030";
+    } else {
+      // Sayfa uzunsa sabitleme
+      footer.style.position = "static";
+      footer.style.transform = "none";
+    }
+  }
+
+  // Sayfa yüklendiğinde ve boyut değiştiğinde kontrol et
+  window.addEventListener("load", updateFooterPosition);
+  window.addEventListener("resize", updateFooterPosition);
+</script>
+
 </body>
 </html>
+
 
 
 
