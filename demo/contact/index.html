@@ -111,6 +111,23 @@ main {
         border-radius: 0 0 0.5rem 0.5rem;
       }
     }
+          /* Geniş ekranlarda sabit footer */
+@media (min-width: 992px) {
+  #page-footer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 1030;
+  }
+}
+/* Küçük ekranlarda sabitliği kaldır */
+@media (max-width: 991.98px) {
+  #page-footer {
+    position: static;
+  }
+}
   </style>
 </head>
 <body>
@@ -269,6 +286,7 @@ main {
   </script>
 </body>
 </html>
+
 
 
 
