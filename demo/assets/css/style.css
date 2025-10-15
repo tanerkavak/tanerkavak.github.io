@@ -49,7 +49,9 @@ body::before {
 .nav-button img {
   transition: filter 0.3s ease;
 }
-
+.nav-button img[alt="portfolio"] {
+  transform: translateY(2px);
+}
 .nav-button:hover img {
   filter: brightness(0) invert(1); /* ikon beyaz olur */
 }
@@ -209,5 +211,6 @@ footer {
 .nav-button.active img {
   filter: brightness(0) invert(1);
 }
+
 
 
