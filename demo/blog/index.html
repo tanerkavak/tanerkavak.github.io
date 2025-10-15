@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icons/web.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <link rel="stylesheet" href="../assets/css/style.css">
+<style>
+    .thumbnail {
+      background-color: #f0f0f0;
+      aspect-ratio:1/1;
+      width: 200px ;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #bbb;
+      font-size: 20px;
+    }
+    .meta-info {
+      font-size: 0.9rem;
+      color: #999;
+    }
+    .meta-info i {
+      margin-right: 5px;
+    }
+    .read-more {
+      background-color: #66d3fa;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    .read-more:hover {
+      background-color: #4ac3ef;
+    }
+    .widget-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #999;
+    }
+    .sidebar a {
+      text-decoration: none;
+      color: #66d3fa;
+    }
+footer {
+      background-color: #f8f9fa;
+      color: #666;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+
+  </head>
+  <body>
+    <header class="container mt-2 rounded-2 bg-body-tertiary">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+          <div class="d-flex justify-content-start align-items-center">
+            <a class="navbar-brand me-3" href="/demo/"><b><sup>T</sup>/<sub>K</sub></b></a>
+            <button type="button" class="nav-button px-3 py-2 rounded me-2" onclick="location.href='#'" disabled>Linkler</button>
+            <button type="button" class="nav-button px-3 py-2 rounded me-2" onclick="location.href='/demo/404/'">404</button>
+            <button type="button" class="nav-button px-3 py-2 rounded me-2" onclick="location.href='/demo/daily/dm/'">Daily Demo</button>
+          </div>
+          <!-- Hamburger menü butonu (mobilde görünür) -->
+          <button id="menuToggle" class="navbar-toggler d-lg-none" type="button" aria-label="Menüyü Aç/Kapat">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Masaüstü menü (mobilde gizli) -->
+          <div class="desktop-buttons d-none d-lg-flex justify-content-end">
+            <button type="button" class="nav-button px-3 py-2 rounded me-2 d-flex justify-content-center"
+                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Data Center"
+                style="height: 40px; width: 40px;" onclick="location.href='#'">
+              <img src="../assets/icons/data.svg" alt="Data Center" width="32" height="26">
+            </button>
+            <button type="button" class="nav-button px-3 py-2 rounded me-2 d-flex justify-content-center active"
+                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Günlük"
+                style="height: 40px; width: 40px;" onclick="location.href='#'">
+              <img src="../assets/icons/bkmark.svg" alt="Bookmark" width="32" height="26">
+            </button>
+            <button type="button" class="nav-button px-3 py-2 rounded me-2 d-flex justify-content-center"
+                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Yer İmlerim"
+                style="height: 40px; width: 40px;" onclick="location.href='#'">
+              <img src="../assets/icons/fur.svg" alt="Fur" width="32" height="26">
+            </button>
+            <button type="button" class="nav-button px-3 py-2 rounded me-2" onclick="location.href='#'">Blog</button>
+            <button type="button" class="nav-button px-3 py-2 rounded me-2" onclick="location.href='#'">İletişim</button>
+          </div>
+        </div>
+        <!-- Mobil menü (mobilde görünür) -->
+        <div id="navbarMenu" class="mobile-menu d-lg-none mt-1" aria-label="Hamburger Menü">
+          <ul>
+            <li>
+              <button type="button" class="mobile-menu-button" 
+                  data-bs-toggle="tooltip" data-bs-placement="top" title="DataCenter" onclick="location.href='#'">
+                <img src="../assets/icons/data.svg" alt="Data" width="24" height="24">
+              </button>
+            </li>
+            <li>
+              <button type="button" class="mobile-menu-button" 
+                  data-bs-toggle="tooltip" data-bs-placement="top" title="Günlük" onclick="location.href='#'">
+                <img src="../assets/icons/bkmark.svg" alt="Günlük" width="24" height="24">
+              </button>
+            </li>
+            <li>
+              <button type="button" class="mobile-menu-button" 
+                  data-bs-toggle="tooltip" data-bs-placement="top" title="Yer İmlerim" onclick="location.href='#'">
+                <img src="../assets/icons/fur.svg" alt="Yerİmleri" width="24" height="24">
+              </button>
+            </li>
+            <li>
+              <button type="button" class="mobile-menu-button" 
+                  data-bs-toggle="tooltip" data-bs-placement="top" title="Blog" onclick="location.href='#'">
+                <img src="../assets/icons/blog.svg" alt="Blog" width="24" height="24">
+              </button>
+            </li>
+            <li>
+              <button type="button" class="mobile-menu-button" 
+                  data-bs-toggle="tooltip" data-bs-placement="top" title="İleişim" onclick="location.href='#'">
+                <img src="../assets/icons/mail.svg" alt="Contact" width="24" height="24">
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+<main class="container mt-5">
+  <div class="row">
+    <!-- Main Content -->
+    <div class="col-lg-8">
+      
+      <!-- Blog Post 1 -->
+      <div class="d-flex mb-4">
+        <div class="me-3 thumbnail">Thumbnail</div>
+        <div>
+          <h5 style="color:#66d3fa;">Game Design Document (GDD) Hazırlanması</h5>
+          <div class="meta-info mb-2">
+            <i class="bi bi-clock"></i> 12th February 2025 &nbsp; | &nbsp;
+            <i class="bi bi-person"></i> Written by Author &nbsp; | &nbsp;
+            <i class="bi bi-folder"></i> Category A, Category B &nbsp; | &nbsp;
+            <i class="bi bi-tags"></i> Tag A, Tag B, Tag C
+          </div>
+          <p>Lorem ipsum dolor sit amet, orci a faucibus, ante curabitur augue ornare nulla facilisi bibendum, tortor felis quam rutrum velit, pretium posuere placerat. Vitae ut nulla eget...</p>
+          <a href="post_temp.html"><button class="read-more">Read More</button></a>
+        </div>
+      </div>
+
+      <!-- Blog Post 2 (identical to first) -->
+      <div class="d-flex mb-4">
+        <div class="me-3 thumbnail">Thumbnail</div>
+        <div>
+          <h5 style="color:#66d3fa;">Game Design Document (GDD) Hazırlanması</h5>
+          <div class="meta-info mb-2">
+            <i class="bi bi-clock"></i> 2th June 2015 &nbsp; | &nbsp;
+            <i class="bi bi-person"></i> Tanner &nbsp; | &nbsp;
+            <i class="bi bi-folder"></i> GDD, Game Design &nbsp; | &nbsp;
+            <i class="bi bi-tags"></i> game, gdd
+          </div>
+          <p>Lorem ipsum dolor sit amet, orci a faucibus, ante curabitur augue ornare nulla facilisi bibendum, tortor felis quam rutrum velit, pretium posuere placerat. Vitae ut nulla eget...</p>
+          <button class="read-more">Read More</button>
+        </div>
+      </div>
+      <!-- Blog Post 2 (identical to first) -->
+      <div class="d-flex mb-4">
+        <div class="me-3 thumbnail">Thumbnail</div>
+        <div>
+          <h5 style="color:#66d3fa;">Article Title</h5>
+          <div class="meta-info mb-2">
+            <i class="bi bi-clock"></i> 12th February 2015 &nbsp; | &nbsp;
+            <i class="bi bi-person"></i> Written by Author &nbsp; | &nbsp;
+            <i class="bi bi-folder"></i> Category A, Category B &nbsp; | &nbsp;
+            <i class="bi bi-tags"></i> Tag A, Tag B, Tag C
+          </div>
+          <p>Lorem ipsum dolor sit amet, orci a faucibus, ante curabitur augue ornare nulla facilisi bibendum, tortor felis quam rutrum velit, pretium posuere placerat. Vitae ut nulla eget...</p>
+          <button class="read-more">Read More</button>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Sidebar -->
+    <div class="col-lg-4 sidebar">
+      
+      <!-- Search -->
+      <div class="mb-4">
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search ..." aria-label="Search">
+          <button class="btn btn-info text-white" type="submit"><i class="bi bi-search"></i></button>
+        </form>
+      </div>
+
+      <!-- Categories -->
+      <div class="mb-4 p-3 border rounded shadow-sm bg-light">
+        <div class="widget-title">Categories</div>
+        <ul class="list-unstyled">
+          <li><a href="#">Category One</a></li>
+          <li><a href="#">Category Two</a></li>
+          <li><a href="#">Category Three</a></li>
+          <li><a href="#">Category Four</a></li>
+          <li><a href="#">Category Five</a></li>
+          <li><a href="#">Category Six</a></li>
+          <li><a href="#">Category Seven</a></li>
+          <li><a href="#">Category Eight</a></li>
+        </ul>
+      </div>
+
+      <!-- Archives -->
+      <div class="mb-4 p-3 border rounded shadow-sm bg-light">
+        <div class="widget-title">Archives</div>
+        <ul class="list-unstyled">
+          <li><a href="#">July 2015</a></li>
+          <li><a href="#">June 2015</a></li>
+          <li><a href="#">May 2015</a></li>
+          <li><a href="#">April 2015</a></li>
+          <li><a href="#">March 2015</a></li>
+          <li><a href="#">February 2015</a></li>
+          <li><a href="#">January 2015</a></li>
+          <li><a href="#">December 2014</a></li>
+          <li><a href="#">November 2014</a></li>
+          <li><a href="#">October 2014</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+<!-- Pagination -->
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center mt-5">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item active" aria-current="page">
+      <a class="page-link" href="#">2</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+</main>
+
+<footer class="container bg-light mt-2 mb-2 rounded-2 bg-body-tertiary" id="page-footer">
+  <div>
+    <p>&copy; 2025 MyBlog. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<!-- Bootstrap Icons (for icons like bi-search, bi-clock, etc.) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<script>
+(function() {
+  var p = window.location.pathname;
+  if (p.match(/^\/blog\.html$/i)) { // sadece kök dizindeki 404.html için
+    window.location.replace('/blog');  // yönlendir
+  }
+})();
+</script>
+</body>
+</html>

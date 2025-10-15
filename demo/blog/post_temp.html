@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Web Geliştirme Rehberi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .thumbnail {
+  background-color: #f0f0f0;
+  width: 100%;
+  height: 200px; /* istediğin yüksekliği verebilirsin */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  font-size: 20px;
+  margin-bottom: 20px;
+    }
+    .meta-info {
+      font-size: 0.9rem;
+      color: #999;
+      margin-bottom: 20px;
+    }
+    .meta-info i {
+      margin-right: 5px;
+    }
+    .sidebar a {
+      text-decoration: none;
+      color: #66d3fa;
+    }
+    footer {
+      background-color: #f8f9fa;
+      color: #666;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+<nav class="container mt-1 navbar bg-body-tertiary bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">Navbar</a>
+  </div>
+</nav>
+<main class="container mt-5">
+  <div class="row">
+    <!-- Main Content -->
+    <div class="col-lg-8">
+      <article>
+        <h1 style="color:#66d3fa;">Web Geliştirme Rehberi</h1>
+        <div class="meta-info">
+          <i class="bi bi-clock"></i> 17th June 2025 &nbsp; | &nbsp;
+          <i class="bi bi-person"></i> Written by Taner &nbsp; | &nbsp;
+          <i class="bi bi-folder"></i> Web Development &nbsp; | &nbsp;
+          <i class="bi bi-tags"></i> web, development, guide
+        </div>
+        <div class="thumbnail">Web Dev</div>
+
+        <p>Web geliştirme, günümüzün en önemli teknolojik alanlarından biridir. Bu rehberde, HTML, CSS ve JavaScript gibi temel web teknolojilerini kullanarak modern web sayfalarının nasıl oluşturulduğunu öğreneceksiniz.</p>
+        
+        <h2>HTML Nedir?</h2>
+        <p>HTML (HyperText Markup Language), web sayfalarının iskeletini oluşturan işaretleme dilidir. Bir web sayfasının yapısını belirler ve içeriklerin düzenlenmesini sağlar.</p>
+
+        <h2>CSS ile Stil Verme</h2>
+        <p>CSS (Cascading Style Sheets), HTML elemanlarının görünümünü şekillendirmek için kullanılır. Renkler, yazı tipleri, düzen ve animasyonlar CSS ile kontrol edilir.</p>
+
+        <h2>JavaScript ile Etkileşim Katma</h2>
+        <p>JavaScript, web sayfalarına dinamik özellikler eklemek için kullanılan programlama dilidir. Butonlara tıklama, form doğrulama, animasyon gibi etkileşimler JavaScript ile yapılır.</p>
+
+        <h2>Sonuç</h2>
+        <p>Bu temel bilgileri kavradıktan sonra, modern web uygulamaları geliştirmek için ileri teknolojilere yönelebilirsiniz. Unutmayın, pratik yapmak web geliştirmede en önemli adımdır.</p>
+      </article>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-lg-4 sidebar">
+      
+      <!-- Search -->
+      <div class="mb-4">
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search ..." aria-label="Search">
+          <button class="btn btn-info text-white" type="submit"><i class="bi bi-search"></i></button>
+        </form>
+      </div>
+
+      <!-- Categories -->
+      <div class="mb-4 p-3 border rounded shadow-sm bg-light">
+        <div class="widget-title">Categories</div>
+        <ul class="list-unstyled">
+          <li><a href="#">Category One</a></li>
+          <li><a href="#">Category Two</a></li>
+          <li><a href="#">Category Three</a></li>
+          <li><a href="#">Category Four</a></li>
+          <li><a href="#">Category Five</a></li>
+          <li><a href="#">Category Six</a></li>
+          <li><a href="#">Category Seven</a></li>
+          <li><a href="#">Category Eight</a></li>
+        </ul>
+      </div>
+
+      <!-- Archives -->
+      <div class="mb-4 p-3 border rounded shadow-sm bg-light">
+        <div class="widget-title">Archives</div>
+        <ul class="list-unstyled">
+          <li><a href="#">July 2015</a></li>
+          <li><a href="#">June 2015</a></li>
+          <li><a href="#">May 2015</a></li>
+          <li><a href="#">April 2015</a></li>
+          <li><a href="#">March 2015</a></li>
+          <li><a href="#">February 2015</a></li>
+          <li><a href="#">January 2015</a></li>
+          <li><a href="#">December 2014</a></li>
+          <li><a href="#">November 2014</a></li>
+          <li><a href="#">October 2014</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="container bg-light">
+  <div>
+    <p>&copy; 2025 MyBlog. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Bootstrap Icons (for icons like bi-search, bi-clock, etc.) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</body>
+</html>
