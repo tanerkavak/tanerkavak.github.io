@@ -273,10 +273,11 @@ main {
   <script>
   function updateFooterPosition() {
     const footer = document.getElementById("page-footer");
+    const main = document.querySelector("main");
     const docHeight = document.body.scrollHeight;
     const winHeight = window.innerHeight;
 
-    // Sayfa ekrana sığıyorsa sabitle
+    // Eğer sayfa içeriği ekrana sığıyorsa:
     if (docHeight <= winHeight) {
       footer.style.position = "fixed";
       footer.style.bottom = "0";
@@ -284,20 +285,28 @@ main {
       footer.style.transform = "translateX(-50%)";
       footer.style.width = "100%";
       footer.style.zIndex = "1030";
-    } else {
-      // Sayfa uzunsa sabitleme
+
+      // Main'in altına boşluk ekle ki footer üstüne binmesin
+      main.style.marginBottom = footer.offsetHeight + "px";
+    } 
+    else {
+      // Sayfa uzunsa normal akışta dursun
       footer.style.position = "static";
       footer.style.transform = "none";
+      main.style.marginBottom = "0";
     }
   }
 
-  // Sayfa yüklendiğinde ve boyut değiştiğinde kontrol et
+  // Sayfa yüklendiğinde ve pencere boyutu değiştiğinde çalıştır
   window.addEventListener("load", updateFooterPosition);
   window.addEventListener("resize", updateFooterPosition);
+  window.addEventListener("scroll", updateFooterPosition);
 </script>
+
 
 </body>
 </html>
+
 
 
 
