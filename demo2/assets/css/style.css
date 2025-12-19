@@ -1,0 +1,216 @@
+html, body {
+  scroll-padding-top: calc(3.5rem + 20px);
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  height: auto;
+}
+body::before {
+    content: ' ';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--bs-body-bg);
+    background: url(../img/grid.png) repeat-x;
+    will-change: transform;
+    z-index: -1;
+}
+
+/* NAV BUTTON (masaüstü) */
+.nav-button {
+  background-color: transparent;
+  color: black;
+  border: 1px solid transparent;  /* şeffaf border */
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  border-radius: 0.25rem;
+  box-shadow: none !important; /* gölge yok */
+}
+
+.nav-button:disabled {
+  background-color: transparent !important;
+  color: #6c757d !important;
+  cursor: not-allowed;
+  box-shadow: none !important;
+  opacity: 0.65;
+  border: 1px solid transparent;
+}
+
+.nav-button:hover:not(:disabled) {
+  background-color: rgba(33, 37, 41);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.nav-button img {
+  transition: filter 0.3s ease;
+}
+.nav-button img[alt="portfolio"] {
+  transform: translateY(2px);
+}
+.nav-button:hover img {
+  filter: brightness(0) invert(1); /* ikon beyaz olur */
+}
+
+/* 3x3 MOBİL MENÜ BUTONLARI */
+.mobile-menu-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 8px;
+  background-color: white;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+  box-shadow: none !important;   /* gölge yok */
+  cursor: pointer;
+}
+
+.mobile-menu-button:hover {
+  background-color: rgba(33, 37, 41); /* hover arka plan */
+  color: white;
+  border: 1px solid transparent;     /* hover’da da border yok */
+  transform: scale(1.05);
+}
+
+.mobile-menu-button img {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-button:hover img {
+  filter: brightness(0) invert(1); /* ikon beyaz olur */
+  transform: scale(1.1);
+}
+
+/* Header gölge efekti */
+header {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+footer {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background-color: var(--bs-body-tertiary); /* header ile aynı arka plan */
+  border-radius: 0.5rem;  /* header'daki rounded-2 ile aynı */
+  padding: 1rem 0;        /* üst-alt padding */
+  margin-top: 1rem;       /* üstten boşluk */
+  text-align: center;
+  color: #495057;          /* header ile uyumlu yazı rengi */
+}
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 15px;
+  z-index: 1000;
+  width: 220px;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.mobile-menu li {
+  text-align: center;
+}
+
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  padding: 5px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* Özel tooltip stilleri */
+.custom-tooltip .tooltip-inner {
+  background-color: #000;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.custom-tooltip.bs-tooltip-top .tooltip-arrow::before {
+  border-top-color: #000;
+}
+
+.custom-tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+  border-bottom-color: #000;
+}
+
+.custom-tooltip.bs-tooltip-start .tooltip-arrow::before {
+  border-left-color: #000;
+}
+
+.custom-tooltip.bs-tooltip-end .tooltip-arrow::before {
+  border-right-color: #000;
+}
+
+/* Mobil görünüm için medya sorguları */
+@media (max-width: 991px) {
+  .desktop-buttons {
+    display: none !important;
+  }
+
+  .navbar-toggler {
+    display: block !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-toggler {
+    display: none !important;
+  }
+
+  .mobile-menu {
+    display: none !important;
+  }
+}
+footer {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background-color: var(--bs-body-tertiary); /* header ile aynı arka plan */
+  border-radius: 0.5rem;  /* header'daki rounded-2 ile aynı */
+  padding: 1rem 0;        /* üst-alt padding */
+  margin-top: 1rem;       /* üstten boşluk */
+  text-align: center;
+  color: #495057;          /* header ile uyumlu yazı rengi */
+
+}
+.nav-button.active {
+  background-color: rgba(33, 37, 41);
+  color: white;
+  transform: translateY(-2px);
+  pointer-events: none; /* opsiyonel: tıklanmaz yapar */
+}
+
+.nav-button.active:hover {
+  background-color: rgba(33, 37, 41);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.nav-button.active img {
+  filter: brightness(0) invert(1);
+}
+
+
+
