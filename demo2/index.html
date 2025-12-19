@@ -3,21 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Taner Kavak’ın kişisel web sitesi: Blog, Devlog ve Projeler hakkında güncel içerikler.">
-<meta name="author" content="Taner Kavak">
+  <meta name="description" content="Taner Kavak’ın kişisel web sitesi: Blog, Devlog ve Projeler hakkında güncel içerikler.">
+  <meta name="author" content="Taner Kavak">
   <title>Taner Kavak | Kişisel Web Sitesi, Blog, Devlog</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    [hidden] {
-      display: none !important;
-    }
-    html, body {
-      scroll-padding-top: calc(3.5rem + 20px);
-      margin: 0;
-      padding: 0;
-      min-height: 100%;
-      height: auto;
-    }
+    [hidden] { display: none !important; }
+    html, body { scroll-padding-top: calc(3.5rem + 20px); margin: 0; padding: 0; min-height: 100%; height: auto; }
     body::before {
       content: ' ';
       position: fixed;
@@ -31,7 +23,6 @@
       z-index: -1;
     }
 
-    /* NAV BUTTON (masaüstü) */
     .nav-button {
       background-color: transparent;
       color: black;
@@ -46,32 +37,12 @@
       display: inline-flex;
       justify-content: center;
       align-items: center;
+    }
+    .nav-button:disabled { background-color: transparent !important; color: #6c757d !important; cursor: not-allowed; opacity: 0.65; border: 1px solid transparent; }
+    .nav-button:hover:not(:disabled), .nav-button.active { background-color: rgba(33, 37, 41); color: white; transform: translateY(-2px); }
+    .nav-button img { width: 32px; height: 26px; transition: filter 0.3s ease; }
+    .nav-button:hover img, .nav-button.active img { filter: brightness(0) invert(1); }
 
-    }
-    .nav-button:disabled {
-      background-color: transparent !important;
-      color: #6c757d !important;
-      cursor: not-allowed;
-      opacity: 0.65;
-      border: 1px solid transparent;
-    }
-    .nav-button:hover:not(:disabled),
-    .nav-button.active {
-      background-color: rgba(33, 37, 41);
-      color: white;
-      transform: translateY(-2px);
-    }
-    .nav-button img {
-      width: 32px;
-      height: 26px;
-      transition: filter 0.3s ease;
-    }
-    .nav-button:hover img,
-    .nav-button.active img {
-      filter: brightness(0) invert(1);
-    }
-
-    /* Mobil menü */
     .mobile-menu {
       position: absolute;
       top: 100%;
@@ -86,17 +57,8 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 10px;
     }
-    .mobile-menu ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-    .mobile-menu li {
-      text-align: center;
-    }
+    .mobile-menu ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .mobile-menu li { text-align: center; }
     .mobile-menu-button {
       display: flex;
       justify-content: center;
@@ -117,21 +79,11 @@
       transform: scale(1.05);
       border: 1px solid transparent;
     }
-    .mobile-menu-button img {
-      width: 24px;
-      height: 24px;
-      transition: all 0.3s ease;
-    }
-    .mobile-menu-button:hover img {
-      filter: brightness(0) invert(1);
-      transform: scale(1.1);
-    }
+    .mobile-menu-button img { width: 24px; height: 24px; transition: all 0.3s ease; }
+    .mobile-menu-button:hover img { filter: brightness(0) invert(1); transform: scale(1.1); }
 
-    header, footer {
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
+    header, footer { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 
-    /* Tooltip */
     .custom-tooltip .tooltip-inner {
       background-color: #000;
       color: #fff;
@@ -140,68 +92,32 @@
       font-size: 14px;
     }
 
-    @media (max-width: 991px) {
-      .desktop-buttons { display: none !important; }
-      .navbar-toggler { display: block !important; }
+    @media (max-width: 991px) { .desktop-buttons { display: none !important; } .navbar-toggler { display: block !important; } }
+    @media (min-width: 992px) { .navbar-toggler { display: none !important; } .mobile-menu { display: none !important; } }
+
+    #menuToggle, .nav-button, .mobile-menu-button { border: none !important; outline: none !important; box-shadow: none !important; }
+
+    .navbar-breadcrumb {
+      background-color: var(--bs-body-tertiary) !important;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
     }
-    @media (min-width: 992px) {
-      .navbar-toggler { display: none !important; }
-      .mobile-menu { display: none !important; }
+    .navbar-breadcrumb a {
+      color: black;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      transition: background-color 0.3s, color 0.3s;
     }
-/* Tüm nav butonlarındaki çerçeveyi kaldır */
-#menuToggle,
-.nav-button,
-.mobile-menu-button {
-  border: none !important;      /* Çerçeveyi kaldırır */
-  outline: none !important;     /* Focus çerçevesini kaldırır */
-  box-shadow: none !important;  /* Gölge varsa kaldırır */
-}
-/*  breadcrumb CSS – Temaya uygun hale getirme */
-/* Navbar uyumlu breadcrumb */
-.navbar-breadcrumb {
-  background-color: var(--bs-body-tertiary) !important; /* kesin arka plan */
-  border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-}
+    .navbar-breadcrumb a:hover { background-color: rgba(33, 37, 41, 0.1); color: rgba(33, 37, 41); }
+    .navbar-breadcrumb .breadcrumb-item + .breadcrumb-item::before { content: "›"; color: #6c757d; padding: 0 0.5rem; }
+    .navbar-breadcrumb .breadcrumb-item.active { color: rgba(33, 37, 41); pointer-events: none; }
 
-.navbar-breadcrumb a {
-  color: black;
-  text-decoration: none;
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.navbar-breadcrumb a:hover {
-  background-color: rgba(33, 37, 41, 0.1);
-  color: rgba(33, 37, 41);
-}
-
-.navbar-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
-  content: "›";
-  color: #6c757d;
-  padding: 0 0.5rem;
-}
-
-.navbar-breadcrumb .breadcrumb-item.active {
-  color: rgba(33, 37, 41);
-  pointer-events: none;
-}
-.disabled-link {
-  cursor: not-allowed !important;
-  color: #6c757d !important;
-  opacity: 0.65 !important;
-  text-decoration: none !important;
-  background-color: transparent !important;
-  transform: none !important;
-}
-
-
-
+    .disabled-link { cursor: not-allowed !important; color: #6c757d !important; opacity: 0.65 !important; text-decoration: none !important; background-color: transparent !important; transform: none !important; }
   </style>
 </head>
 <body>
@@ -209,13 +125,9 @@
 <header class="container mt-2 rounded-2 bg-body-tertiary" role="banner">
   <nav class="navbar navbar-expand-lg" role="navigation">
     <div class="container-fluid d-flex justify-content-between align-items-center">
-
-      <!-- Logo ve Linkler -->
       <div class="d-flex justify-content-start align-items-center">
         <a class="navbar-brand me-3" href="#" aria-label="Ana sayfa - Taner Kavak"><b><sup>T</sup>/<sub>K</sub></b></a>
-
-<a class="nav-button px-3 py-2 rounded me-2 disabled-link" href="#" aria-disabled="true" tabindex="-1">Linkler</a>
-
+        <a class="nav-button px-3 py-2 rounded me-2 disabled-link" href="#" aria-disabled="true" tabindex="-1">Linkler</a>
       </div>
 
       <!-- Hamburger menü -->
@@ -241,35 +153,33 @@
       <!-- Mobil Menü -->
       <div id="navbarMenu" class="mobile-menu d-lg-none mt-1" hidden>
         <ul>
-          <li><a class="mobile-menu-button" href="#" title="Data Center"><img loading="lazy" src="assets/icons/data.svg" alt="Data Center"></a></li>
-          <li><a class="mobile-menu-button" href="#" title="Günlük"><img loading="lazy" src="assets/icons/bkmark.svg" alt="Günlük"></a></li>
-          <li><a class="mobile-menu-button" href="#" title="Yer İmlerim"><img loading="lazy" src="assets/icons/fur.svg" alt="Yer İmlerim"></a></li>
-          <li><a class="mobile-menu-button" href="#" title="Blog"><img loading="lazy" src="assets/icons/blog.svg" alt="Blog"></a></li>
-          <li><a class="mobile-menu-button" href="#" title="İletişim"><img loading="lazy" src="assets/icons/mail.svg" alt="İletişim"></a></li>
+          <li><a class="mobile-menu-button" href="#" title="Data Center" data-tooltip-placement="top"><img loading="lazy" src="assets/icons/data.svg" alt="Data Center"></a></li>
+          <li><a class="mobile-menu-button" href="#" title="Günlük" data-tooltip-placement="top"><img loading="lazy" src="assets/icons/bkmark.svg" alt="Günlük"></a></li>
+          <li><a class="mobile-menu-button" href="#" title="Yer İmlerim" data-tooltip-placement="top"><img loading="lazy" src="assets/icons/fur.svg" alt="Yer İmlerim"></a></li>
+          <li><a class="mobile-menu-button" href="#" title="Blog" data-tooltip-placement="bottom"><img loading="lazy" src="assets/icons/blog.svg" alt="Blog"></a></li>
+          <li><a class="mobile-menu-button" href="#" title="İletişim" data-tooltip-placement="bottom"><img loading="lazy" src="assets/icons/mail.svg" alt="İletişim"></a></li>
         </ul>
       </div>
 
     </div>
   </nav>
 </header>
+
 <header class="container rounded-2 bg-body-tertiary">
-<nav class="container mt-1">
-  <ol class="breadcrumb navbar-breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Ana Sayfa</a></li>
-    <li class="breadcrumb-item"><a href="#">Blog</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Günlük</li>
-  </ol>
-</nav>
+  <nav class="container mt-1">
+    <ol class="breadcrumb navbar-breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Ana Sayfa</a></li>
+      <li class="breadcrumb-item"><a href="#">Blog</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Günlük</li>
+    </ol>
+  </nav>
 </header>
 
-<!-- MAIN CONTENT -->
 <main role="main" class="container">
-  <!-- Buraya sayfa içeriği gelecek -->
-<h1>HOŞ GELDİNİZ.</h1>
-<p>Deneme Main Kısmı</p>
+  <h1>HOŞ GELDİNİZ.</h1>
+  <p>Deneme Main Kısmı</p>
 </main>
 
-<!-- FOOTER -->
 <footer role="contentinfo" class="container mt-4 rounded-2 bg-body-tertiary text-center py-3">
   <p>© 2025 Taner Kavak • Kişisel Web Sitesi, Blog ve Devlog</p>
 </footer>
@@ -287,11 +197,13 @@
     btn.addEventListener('mouseleave', () => tooltip.hide());
   });
 
-  // Mobil menü butonları için tooltip
+  // Mobil menü butonları için tooltip (her butona özel pozisyon)
   const mobileMenuButtons = document.querySelectorAll('.mobile-menu-button');
   mobileMenuButtons.forEach(btn => {
+    const placement = btn.getAttribute('data-tooltip-placement') || 'bottom';
     new bootstrap.Tooltip(btn, { 
       trigger: 'hover',
+      placement: placement,
       customClass: 'custom-tooltip'
     });
   });
@@ -304,7 +216,7 @@
     event.stopPropagation();
     const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
     menuToggle.setAttribute('aria-expanded', !isExpanded);
-    navbarMenu.hidden = isExpanded; // hidden attribute ile aç/kapa
+    navbarMenu.hidden = isExpanded;
   });
 
   document.addEventListener('click', (event) => {
